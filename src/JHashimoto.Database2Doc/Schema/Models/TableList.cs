@@ -9,7 +9,7 @@ namespace JHashimoto.Database2Doc.Schema.Models {
         public IEnumerable<Table> tableList { get; init; }
 
         public IEnumerable<Table> GetViews() {
-            return tableList.Where(t => t.TableType == "VIEW");
+            return tableList.Where(t => t.TableType == "VIE");
         }
 
         public IEnumerable<Table> GetTables() {
