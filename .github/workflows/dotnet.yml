@@ -8,4 +8,4 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2.1.0
-      - run: pwd
+      - run: dotnet test ./src/JHashimoto.Database2Doc.Tests/
