@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Dapper;
 using JHashimoto.Database2Doc.Schema.Models;
 using JHashimoto.Database2Doc.Schema.Services;
@@ -9,7 +10,7 @@ namespace JHashimoto.Database2Doc {
         static void Main(string[] args) {
             var s = new TableListService();
             var tableList = s.GetTableList();
-            Console.WriteLine(tableList.Count);
+            Console.WriteLine(tableList.Items.First().TableName);
         }
     }
 }
