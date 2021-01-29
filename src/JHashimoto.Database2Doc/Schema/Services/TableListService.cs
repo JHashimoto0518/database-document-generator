@@ -14,7 +14,7 @@ namespace JHashimoto.Database2Doc.Schema.Services {
 
         public TableList GetTableList() {
 
-            using (DatabaseRepositoryContext queryContext = new DatabaseRepositoryContext("Microsoft.Data.SqlClient", "Server=(local);Database=master;User Id=sa;Password=t6Eww7lL4teE;")) {
+            using (DatabaseRepositoryContext queryContext = new DatabaseRepositoryContext(DbProviderTypes.SqlServer, "Server=(local);Database=master;User Id=sa;Password=t6Eww7lL4teE;")) {
                 var rep = new TableListRepository(queryContext);
                 return rep.GetTableList();
             }

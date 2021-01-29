@@ -13,7 +13,7 @@ namespace JHashimoto.Database2Doc.Schema.Services.Tests {
         public void GetTableListTest() {
             var s = new TableListService();
             var tableList = s.GetTableList();
-            Assert.AreEqual("master", tableList.First().Database);
+            Assert.AreEqual("master", tableList.Items.First().Database);
         }
     }
 }
