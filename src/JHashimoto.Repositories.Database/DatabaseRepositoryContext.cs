@@ -22,24 +22,6 @@ namespace JHashimoto.Repositories.Database {
         public bool IsOpened {
             get { return this.connection?.State == ConnectionState.Open; }
         }
-        public static DbProviderFactory GetDbProviderFactory() {
-            Assembly asm = Assembly.LoadFrom("Microsoft.Data.SqlClient.dll");
-
-            Type masterType = asm.GetType("Microsoft.Data.SqlClient.SqlClientFactory");
-
-            // System.MissingMethodException: No parameterless constructor defined for type 'Microsoft.Data.SqlClient.SqlClientFactory'.
-            DbProviderFactory f = (DbProviderFactory) Activator.CreateInstance(masterType);
-            DbProviderFactories.RegisterFactory("Microsoft.Data.SqlClient", f);
-
-            //Type masterType = Type.GetType("Microsoft.Data.SqlClient.SqlClientFactory");
-            //DbProviderFactory f = (DbProviderFactory) Activator.CreateInstance(masterType);
-            //return SqlClientFactory.Instance;
-
-            //DbProviderFactories.RegisterFactory("Microsoft.Data.SqlClient", SqlClientFactory.Instance);
-
-            //DbProviderFactory f = DbProviderFactories.GetFactory("Microsoft.Data.SqlClient");
-            return f;
-        }
 
         public DatabaseRepositoryContext(DbProviderTypes dbProviderTypes, string connectionString) {
             //Guard.ArgumentNotNullOrWhiteSpace(providerName, "providerName");
@@ -56,8 +38,8 @@ namespace JHashimoto.Repositories.Database {
             // System.IO.FileLoadException: The given assembly name or codebase was invalid. (0x80131047)
             //DbProviderFactories.RegisterFactory("Microsoft.Data.SqlClient", typeof(SqlClientFactory).Assembly.FullName);
 
+            new DbProviderFactoryRegistrar().RegisterFactory(dbProviderTypes);
             
-            DbProviderFactories.RegisterFactory("Microsoft.Data.SqlClient", SqlClientFactory.Instance);
             DbProviderFactory factory = DbProviderFactories.GetFactory("Microsoft.Data.SqlClient");
             
             this.connection = factory.CreateConnection();
