@@ -9,14 +9,14 @@ namespace JHashimoto.Database2Doc.Tests.Schema.Models {
         [TestMethod]
         public void GetViewTest()　{
             const string Name = "CustomerView";
-            var l = new TableList() { Items = new List<Table>() { new Table() { TableName = Name, TableType = "VIEW" } } };
+            var l = new TableList(Items: new List<Table>() { new Table() { TableName = Name, TableType = "VIEW" } });
             Assert.AreEqual(Name, l.GetViews().First().TableName);
         }
 
         [TestMethod]
         public void GetTableTest() {
             const string Name = "Customer";
-            var l = new TableList() { Items = new List<Table>() { new Table() { TableName = Name, TableType = "BASE TABLE" } } };
+            var l = new TableList(Items: new List<Table>() { new Table() { TableName = Name, TableType = "BASE TABLE" } });
             Assert.AreEqual(Name, l.GetTables().First().TableName);
         }
     }

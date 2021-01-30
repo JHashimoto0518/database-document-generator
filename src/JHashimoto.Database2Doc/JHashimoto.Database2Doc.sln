@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JHashimoto.Database2Doc", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JHashimoto.Database2Doc.Tests", "..\JHashimoto.Database2Doc.Tests\JHashimoto.Database2Doc.Tests.csproj", "{7149DA73-A4C1-42A0-9A19-CA8F1B3BB181}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JHashimoto.Repositories.Database", "..\JHashimoto.Repositories.Database\JHashimoto.Repositories.Database.csproj", "{FA68A2AE-7C76-4D3E-AACF-A7196E522A18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JHashimoto.Repositories.Database", "..\JHashimoto.Repositories.Database\JHashimoto.Repositories.Database.csproj", "{FA68A2AE-7C76-4D3E-AACF-A7196E522A18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JHashimoto.Repositories.DatabaseTests", "..\JHashimoto.Repositories.DatabaseTests\JHashimoto.Repositories.DatabaseTests.csproj", "{0A5C5C4D-B08F-4E12-9FBF-F0B392CF915B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JHashimoto.Repositories.DatabaseTests", "..\JHashimoto.Repositories.DatabaseTests\JHashimoto.Repositories.DatabaseTests.csproj", "{0A5C5C4D-B08F-4E12-9FBF-F0B392CF915B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JHashimoto.InfrastructureTests", "..\..\..\infrastructure\JHashimoto.InfrastructureTests\JHashimoto.InfrastructureTests.csproj", "{693D7570-CF9A-4662-A51D-68B2237CBF4A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JHashimoto.Infrastructure", "..\..\..\infrastructure\JHashimoto.Infrastructure\JHashimoto.Infrastructure.csproj", "{CFCEFF65-BC81-455F-A23D-75826C7B9767}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{0A5C5C4D-B08F-4E12-9FBF-F0B392CF915B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A5C5C4D-B08F-4E12-9FBF-F0B392CF915B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A5C5C4D-B08F-4E12-9FBF-F0B392CF915B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{693D7570-CF9A-4662-A51D-68B2237CBF4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{693D7570-CF9A-4662-A51D-68B2237CBF4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{693D7570-CF9A-4662-A51D-68B2237CBF4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{693D7570-CF9A-4662-A51D-68B2237CBF4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFCEFF65-BC81-455F-A23D-75826C7B9767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFCEFF65-BC81-455F-A23D-75826C7B9767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFCEFF65-BC81-455F-A23D-75826C7B9767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFCEFF65-BC81-455F-A23D-75826C7B9767}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

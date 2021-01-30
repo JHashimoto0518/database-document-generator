@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace JHashimoto.Database2Doc.Schema.Models {
-    public record TableList {
-        public IEnumerable<Table> Items { get; init; }
+    public record TableList(IEnumerable<Table> Items) {
+        //public IEnumerable<Table> Items { get; init; }
 
         public IEnumerable<Table> GetViews() {
             return Items.Where(t => t.TableType == "VIEW");

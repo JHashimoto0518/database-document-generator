@@ -9,7 +9,7 @@ namespace JHashimoto.Repositories.Database {
 
         public void RegisterFactory(DbProviderTypes dbProviderTypes) {
             if (dbProviderTypes == DbProviderTypes.SqlServer) {
-                DbProviderFactories.RegisterFactory("Microsoft.Data.SqlClient", SqlClientFactory.Instance);
+                DbProviderFactories.RegisterFactory(DbProviderTypes.SqlServer.GetProperName(), SqlClientFactory.Instance);
             }
         }
     }

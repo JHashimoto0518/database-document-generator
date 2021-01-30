@@ -26,7 +26,7 @@ WHERE
  ";
 
             var e = Context.QuerySql<Table>(TableListQuery, new { DatabaseName = "master", SchemaName = "dbo", TableType = "BASE TABLE" });
-            var tableList = new TableList() { Items = e };
+            var tableList = new TableList(Items: e);
             return tableList;
         }
     }

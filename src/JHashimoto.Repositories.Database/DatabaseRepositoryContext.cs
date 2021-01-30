@@ -26,18 +26,8 @@ namespace JHashimoto.Repositories.Database {
         public DatabaseRepositoryContext(DbProviderTypes dbProviderTypes, string connectionString) {
             //Guard.ArgumentNotNullOrWhiteSpace(providerName, "providerName");
             //Guard.ArgumentNotNullOrWhiteSpace(connectionString, "connectionString");
-
-            /*
-            Test method JHashimoto.Database2Doc.Schema.Services.Tests.TableListServiceTests.GetTableListTest threw exception:
-            System.ArgumentException: The specified invariant name 'Microsoft.Data.SqlClient' wasn't found in the list of registered .NET Data Providers.
             
-            [c# - .NET Core2.1に.NETSQLクライアントをインストールした後、DbProviderFactories.GetFactoryClassesは結果を返しません。](https://python5.com/q/gkbpffru)
-            [How to use Microsoft.Data.SqlClient with DbProviderFactories? · Issue #239 · dotnet/SqlClient](https://github.com/dotnet/SqlClient/issues/239)
-            */
-
-            // System.IO.FileLoadException: The given assembly name or codebase was invalid. (0x80131047)
-            //DbProviderFactories.RegisterFactory("Microsoft.Data.SqlClient", typeof(SqlClientFactory).Assembly.FullName);
-
+            // [How to use Microsoft.Data.SqlClient with DbProviderFactories? · Issue #239 · dotnet/SqlClient](https://github.com/dotnet/SqlClient/issues/239)
             new DbProviderFactoryRegistrar().RegisterFactory(dbProviderTypes);
             
             DbProviderFactory factory = DbProviderFactories.GetFactory("Microsoft.Data.SqlClient");
